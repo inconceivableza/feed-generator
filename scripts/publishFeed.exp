@@ -1,0 +1,38 @@
+#!/usr/bin/expect -f
+
+# argv: commandline params to feed publishFeedGen.ts
+
+set handle  [lindex $argv 0]
+set passwd  [lindex $argv 1]
+set pdsURL  [lindex $argv 2]
+set rname   [lindex $argv 3]
+
+set timeout 5
+
+spawn env LANG=C yarn publishFeed
+expect "Enter your Bluesky handle:"
+send "$handle\n"
+
+expect "Enter your Bluesky password (preferably an App Password):"
+send "$passwd\n"
+
+expect "PDS service to sign in with:"
+send "$pdsURL\n"
+
+expect "Enter a short name or the record."
+send "$rname\n"
+
+expect "Enter a display name for your feed:"
+send "$rname\n"
+
+expect "enter a brief description of your feed:"
+send "$rname\n"
+
+expect "enter a local path to an avatar that will be used for the feed:"
+send "\n"
+
+expect "Is this a video-only feed?"
+send "\n"
+
+interact
+exit 0

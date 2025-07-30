@@ -36,7 +36,7 @@ export class FeedGenerator {
 
     const didCache = new MemoryCache()
     const didResolver = new DidResolver({
-      plcUrl: process.env.FEEDGEN_PLC_URL ?? 'https://plc.directory',
+      plcUrl: 'https://plc.directory',
       didCache,
     })
 
