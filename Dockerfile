@@ -14,4 +14,4 @@ EXPOSE 3000
 
 CMD yarn start
 
-LABEL org.opencontainers.image.source=https://github.com/bluesky-social/feed-generator
+LABEL org.opencontainers.image.source=https://github.com/inconceivableza/feed-generator
