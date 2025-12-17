@@ -6,7 +6,7 @@ RUN apt update; apt install -y expect ; \
 
 WORKDIR /app
 COPY . .
-RUN yarn install
+RUN yarn install --frozen-lockfile
 
 ENV NODE_ENV=production
 ENV FEEDGEN_PORT=3000
